@@ -1,0 +1,227 @@
+{
+  "info": {
+    "_postman_id": "263698ae-e5a0-451e-8994-89c43eb90e64",
+    "name": "Server Monitor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45739390",
+    "_collection_link": "https://go.postman.co/collection/45739390-263698ae-e5a0-451e-8994-89c43eb90e64?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Server",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Example HTTP Server\",\r\n  \"url\": \"https://example.com\",\r\n  \"protocol\": \"HTTPS\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/servers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Servers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/servers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Server By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/servers/11",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers",
+            "11"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Server",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Example HTTPS Server (Updated)\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/servers/12",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Server Requests (History)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/servers/11/requests?limit=50",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers",
+            "11",
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "50"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Was Healthy At Timestamp",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/servers/12/was-healthy?timestamp=2026-01-20T13:05:00%2B02:00",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers",
+            "12",
+            "was-healthy"
+          ],
+          "query": [
+            {
+              "key": "timestamp",
+              "value": "2026-01-20T13:05:00%2B02:00"
+            }
+          ]
+        },
+        "description": "Returns the server health status at a specific point in time.\n\nQuery param:\n\n- timestamp (ISO 8601 datetime)\n    \n\nExamples:\n\n- 2026-01-20T11:05:00Z\n    \n- 2026-01-20T13:05:00+02:00 (note: + must be URL-encoded as +)"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Server",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/servers/12",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "servers",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}

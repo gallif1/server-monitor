@@ -96,7 +96,7 @@ This will create:
 Start the FastAPI server (default port: 8000):
 
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn main:app --reload
 ```
 
 Verify the service is running:

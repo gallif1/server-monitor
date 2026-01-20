@@ -26,7 +26,7 @@ The system is composed of two parts:
 Clone the repository (or download it), create a virtual environment, and install dependencies:
 
 ```bash
-git clone <your-repo-url>
+git clone (https://github.com/gallif1/server-monitor.git)
 cd server-monitor
 
 python -m venv .venv
